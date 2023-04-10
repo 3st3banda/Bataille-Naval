@@ -1,7 +1,7 @@
 """Import"""
 import pygame
 
-def bouton_clique(button, event):
+def bouton_clique(button, event, actif):
     """
         button -> objet: Rect
         event -> Event
@@ -9,9 +9,10 @@ def bouton_clique(button, event):
         Défini si l'utilisateur à cliquer sur la surface Rect
     """
     clique = False
-    if event.type == pygame.MOUSEBUTTONDOWN:
-        if button.collidepoint(event.pos):
-            clique = True
+    if actif == True:
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if button.collidepoint(event.pos):
+                clique = True
     return clique
 
 
@@ -30,7 +31,7 @@ def redimention(images):
     return img_redim
 
 
-def affiche_images(screen, images):
+def affichage(screen, images):
     """
         screen -> Surface
         images -> list:
@@ -44,19 +45,32 @@ def affiche_images(screen, images):
     img_resize = redimention(images)
     for i in range(len(img_resize)):
         screen.blit(img_resize[i], images[i][2])
+    pygame.display.update()
     
 
 def fond_noir_transp(screen):
     """
         screen -> Surface
+        actif -> bool : Défini si le bouton est fonctionnel ou non
 
         Asombrissement de la fenetre
     """
     # Création d'une surface noire avec un alpha 
     fond_noir = pygame.Surface((screen.get_width(), screen.get_height()), pygame.SRCALPHA)
-    fond_noir.fill((0, 0, 0, 230))
+    fond_noir.fill((0, 0, 0, 245))
     screen.blit(fond_noir, (0, 0))
     pygame.display.flip()
 
 
+def anime_button(screen, button2, pos_img):
+    screen.blit(button2, pos_img)
+    pygame.display.update()
+    pygame.time.wait(250)
 
+
+
+
+def pg_precedent(pages, liste):
+    for i in range(len(liste)):
+        if liste[i] == True:
+            return pages[i]
