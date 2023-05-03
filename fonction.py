@@ -254,14 +254,14 @@ def update_matrice_missile_anim(matrice):
     pos=trouver_curseur(matrice)
     matrice[pos[0]][pos[1]] = 5
     matrice[0][0] = 2
-""""""
+"""Chepa quoi mettre """
 def update_matrice_missile_def(matrice):
     for ligne in range(taille_case):
         for colonne in range(taille_case):
 
             if matrice[ligne][colonne] == 5:
                 matrice[ligne][colonne] = 4
-""""""
+"""chepa non plus """
 def pos_bombe_colonne(matrice):
     for ligne in range(taille_case):
         for colonne in range(taille_case):
