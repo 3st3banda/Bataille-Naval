@@ -251,13 +251,11 @@ def deplacer_curseur(matrice:list,sens:str)->list:
     return matrice
 
 def update_matrice_missile_anim(matrice):
-
     pos=trouver_curseur(matrice)
     matrice[pos[0]][pos[1]] = 5
     matrice[0][0] = 2
 
 def update_matrice_missile_def(matrice):
-
     for ligne in range(taille_case):
         for colonne in range(taille_case):
 
@@ -265,7 +263,6 @@ def update_matrice_missile_def(matrice):
                 matrice[ligne][colonne] = 4
 
 def pos_bombe_colonne(matrice):
-
     for ligne in range(taille_case):
         for colonne in range(taille_case):
 
@@ -275,7 +272,6 @@ def pos_bombe_colonne(matrice):
     return pos_colonne_bombe
 
 def nb_lignes_bombe_depart(matrice):
-
     for ligne in range(taille_case):
         for colonne in range(taille_case):
 
@@ -292,14 +288,11 @@ def generer_tab():
     return tab
 
 def update_tab(tab):
-
     curseur_tab = pygame.image.load("images/curseur_tab.png").convert_alpha()
-
 
     for element in tab:
         if element == 2:
             fenetre.blit(curseur_tab,(deplacer_tab(tab) + 1, 8 * 72 + 1))
 
 def deplacer_tab(tab):
-
     return 12 * 72
