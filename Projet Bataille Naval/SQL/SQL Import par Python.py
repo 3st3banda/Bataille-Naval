@@ -7,3 +7,5 @@ curseur_sql.execute('''CREATE TABLE IF NOT EXISTS score(
     Nom TEXT,
     score INT
 )''')
+
+curseur
