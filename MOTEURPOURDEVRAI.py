@@ -8,7 +8,7 @@ class Bateau:
         self.y = y
         self.cases = []
         self.touchees = []
-        self.etat = 'pastouché'
+        self.etat = 'Pastouché'
         self.init_cases()
 #Initiation de l'objet : bateau mgl 
 
@@ -23,7 +23,7 @@ class Bateau:
 
     def est_touche(self, x, y):
         if (x, y) in self.cases:
-            self.touchees.append((x, y))# si la case visée fait partie des cases occupées par le bateau bah le bateau est TOCUH AHAHA
+            self.touchees.append((x, y))# si la case visée fait partie des cases occupées par le bateau bah le bateau est TOUCH AHAHA
             if len(self.touchees) == len(self.cases):# si toutes les cases occupées par le bateau sont touchées, le bateau est coulé et t'as perdu
                 self.etat = 'T AS ETE COULES AHAHA'
             else:
@@ -31,5 +31,3 @@ class Bateau:
             return True
         else:
             return False
-
-
