@@ -8,7 +8,7 @@ class Bateau:
         self.y = y
         self.cases = []
         self.touchees = []
-        self.etat = 'Pastouché'
+        self.etat = 'PasTouché'
         self.init_cases()
 #Initiation de l'objet : bateau mgl 
 
