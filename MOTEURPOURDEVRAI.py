@@ -31,3 +31,10 @@ class Bateau:
             return True
         else:
             return False
+
+def afficher(self):
+    print('f{self.nom}')
+    print('f{self.taille}')
+    print('f{self.orientation}')
+
+print(afficher(Bateau))
